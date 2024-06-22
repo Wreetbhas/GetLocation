@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>HTML Geolocation</h1>
+<p id="loc"></p>
+
+<script>
+var ele=document.getElementById("loc");
+
+
+function getLocation() {
+
+  const options = {
+    enableHighAccuracy: true,
+    maximumAge: 1,
+    timeout: 30000
+  };
+
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition,showError, options);
+  } else { 
+    ele.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  ele.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude +"<br>Accuracy: "+ position.coords.accuracy;
+}
+function showError(error){
+    ele.innerHTML = error.message;
+}
+getLocation();
+
+/*function error() {
+  alert("Sorry, no position available.");
+}
+
+
+const watchID = navigator.geolocation.watchPosition(showPosition, error, {enableHighAccuracy: true});*/
+
+</script>
+
+</body>
+</html>
+
