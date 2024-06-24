@@ -30,7 +30,7 @@ function showPosition(position) {
 function showError(error){
     ele.innerHTML = error.message;
 }
-getLocation();
+window.onload=getLocation;
 
 /*function error() {
   alert("Sorry, no position available.");
