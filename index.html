@@ -16,6 +16,8 @@ function getLocation() {
     timeout: 30000
   };
 
+  console.log("reloaded");
+
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition,showError, options);
   } else { 
