@@ -28,8 +28,12 @@ function getLocation() {
 
 function showPosition(position) {
   count++;
-  ele.innerHTML = "Latitude: " + position.coords.latitude + 
-  "<br>Longitude: " + position.coords.longitude + "<br>Accuracy: "+ position.coords.accuracy + "<br>Updated "+count+" times";
+  ele.innerHTML = "<h2>" +
+                  "Latitude: " + position.coords.latitude + 
+                  "<br>Longitude: " + position.coords.longitude + 
+                  "<br>Accuracy: "+ position.coords.accuracy + " metres" + 
+                  "<br>Updated "+count+" times" + 
+                  "</h2>";
 }
 function showError(error){
     ele.innerHTML = error.message;
