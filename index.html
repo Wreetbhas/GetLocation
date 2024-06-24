@@ -7,6 +7,7 @@
 <script>
 var ele=document.getElementById("loc");
 var watchId;
+var count=0;
 
 function getLocation() {
 
@@ -26,8 +27,9 @@ function getLocation() {
 }
 
 function showPosition(position) {
+  count++;
   ele.innerHTML = "Latitude: " + position.coords.latitude + 
-  "<br>Longitude: " + position.coords.longitude +"<br>Accuracy: "+ position.coords.accuracy;
+  "<br>Longitude: " + position.coords.longitude + "<br>Accuracy: "+ position.coords.accuracy + "<br>Updated "+count+" times";
 }
 function showError(error){
     ele.innerHTML = error.message;
